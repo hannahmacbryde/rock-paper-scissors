@@ -1,0 +1,176 @@
+@import "index.css";
+@import url('HARRYP__.TTF');
+
+@font-face {
+    font-family: 'harryP';
+    src: url('HARRYP__.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#full-container h1 {
+    color: #fff;
+    text-align:center;
+    font-family: 'harryP', sans-serif;
+    font-size: 60px;
+    padding: 20px;
+    text-transform: lowercase;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#rps-container {
+    background-image: url(../images/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2% 0 0 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border: 5px solid #FFF;
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#rps-container #rps-imgs {
+    display: flex;
+    justify-content: space-between;
+}
+
+#rps-container #rps-btns {
+    display: flex;
+    align-items: self-start;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+}
+
+#rps-container #rps-btns button {
+    padding:10px;
+    text-transform: uppercase;
+    font-family: 'harryP', sans-serif;
+    background-color: beige;
+}
+
+#rps-container img {
+    width: 165px;
+}
+
+#results {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#results p {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'harryP', sans-serif;
+}
+
+#reset-btn {
+    margin-top: 5px;
+    margin-bottom:15px;
+    padding: 10px 20px;
+    background-color: beige;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: 'harryP', sans-serif;
+    cursor: pointer;
+}
+
+#reset-btn:hover {
+    background-color: #45a049;
+}
+
+#progress-bars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 20px auto;
+    width: 62%;
+    height: 35px;
+    top: 100px;
+}
+
+#human-bar.magic-bar {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,255,0,0) 0%, rgba(0,255,0,0.3) 50%, rgba(0,255,0,0) 100%);
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#computer-bar.magic-bar {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,0,0,0.3) 50%, rgba(255,0,0,0) 100%);
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.wand-effect {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%);
+    animation: glow 1.5s infinite alternate;
+}
+
+#human-bar .wand-effect {
+    left: 0;
+}
+
+#computer-bar .wand-effect {
+    right: 0;
+}
+
+@keyframes glow {
+    from {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 769px) { 
+    #full-container h1 {
+        font-size: 27px;
+    }
+
+    #rps-container {
+        width: 95%;
+        gap: 0;
+        background-position: center;
+    }
+
+    #rps-container img {
+        width: 100px;
+    }
+
+    #progress-bars {
+        width: 55%;
+        height: 20px;
+        top: 75px;
+    }
+}
